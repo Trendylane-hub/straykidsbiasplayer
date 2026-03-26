@@ -6,7 +6,8 @@
 
 <style>
 body {
-  background: #0d0d0d;
+  margin: 0;
+  background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
   color: white;
   font-family: Arial;
   text-align: center;
@@ -14,34 +15,62 @@ body {
 
 h1 {
   margin-top: 20px;
+  font-size: 2em;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
 }
 
 .buttons button {
   margin: 8px;
   padding: 12px 18px;
   border: none;
-  background: #222;
+  background: #1f1f1f;
   color: white;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 12px;
   transition: 0.3s;
+  box-shadow: 0 0 10px rgba(255,0,0,0.2);
 }
 
 .buttons button:hover {
   background: #ff3c3c;
   transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255,0,0,0.6);
 }
 
+/* SECTION */
 .section {
   display: none;
-  margin-top: 20px;
+  padding: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* PLAYER CARD */
+.player {
+  background: #111;
+  padding: 15px;
+  border-radius: 15px;
+  width: 90%;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(255,0,0,0.3);
 }
 
 iframe {
-  width: 90%;
+  width: 100%;
   height: 380px;
   border-radius: 12px;
-  margin-top: 10px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 </style>
 
@@ -61,37 +90,42 @@ function showSection(id) {
 <h1>Stray Kids Audio Hub 🎧</h1>
 
 <div class="buttons">
-  <button onclick="showSection('group')">Group</button>
-  <button onclick="showSection('in')">I.N</button>
-  <button onclick="showSection('chan')">Bang Chan</button>
-  <button onclick="showSection('lee')">Lee Know</button>
-  <button onclick="showSection('changbin')">Changbin</button>
-  <button onclick="showSection('hyunjin')">Hyunjin</button>
-  <button onclick="showSection('han')">Han</button>
-  <button onclick="showSection('felix')">Felix</button>
-  <button onclick="showSection('seungmin')">Seungmin</button>
+  <button onclick="showSection('group')">Group : Play</button>
+  <button onclick="showSection('in')">I.N : Play</button>
+  <button onclick="showSection('chan')">Bang Chan : Play</button>
+  <button onclick="showSection('lee')">Lee Know : Play</button>
+  <button onclick="showSection('changbin')">Changbin : Play</button>
+  <button onclick="showSection('hyunjin')">Hyunjin : Play</button>
+  <button onclick="showSection('han')">Han : Play</button>
+  <button onclick="showSection('felix')">Felix : Play</button>
+  <button onclick="showSection('seungmin')">Seungmin : Play</button>
 </div>
 
 <!-- GROUP -->
 <div id="group" class="section">
-  <h2>Stray Kids Songs</h2>
-  <iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe>
+  <div class="player">
+    <h2>Stray Kids - All Songs</h2>
+    <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4TnpT6vw5rE"
+    allow="autoplay; encrypted-media"></iframe>
+  </div>
 </div>
 
 <!-- I.N -->
 <div id="in" class="section">
-  <h2>I.N</h2>
-  <iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe>
+  <div class="player">
+    <h2>I.N Playlist</h2>
+    <iframe src="PUT_I.N_PLAYLIST_HERE"></iframe>
+  </div>
 </div>
 
-<!-- OTHER MEMBERS (using main artist for now) -->
-<div id="chan" class="section"><h2>Bang Chan</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
-<div id="lee" class="section"><h2>Lee Know</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
-<div id="changbin" class="section"><h2>Changbin</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
-<div id="hyunjin" class="section"><h2>Hyunjin</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
-<div id="han" class="section"><h2>Han</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
-<div id="felix" class="section"><h2>Felix</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
-<div id="seungmin" class="section"><h2>Seungmin</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
+<!-- OTHER MEMBERS -->
+<div id="chan" class="section"><div class="player"><h2>Bang Chan</h2><iframe src="PUT_PLAYLIST"></iframe></div></div>
+<div id="lee" class="section"><div class="player"><h2>Lee Know</h2><iframe src="PUT_PLAYLIST"></iframe></div></div>
+<div id="changbin" class="section"><div class="player"><h2>Changbin</h2><iframe src="PUT_PLAYLIST"></iframe></div></div>
+<div id="hyunjin" class="section"><div class="player"><h2>Hyunjin</h2><iframe src="PUT_PLAYLIST"></iframe></div></div>
+<div id="han" class="section"><div class="player"><h2>Han</h2><iframe src="PUT_PLAYLIST"></iframe></div></div>
+<div id="felix" class="section"><div class="player"><h2>Felix</h2><iframe src="PUT_PLAYLIST"></iframe></div></div>
+<div id="seungmin" class="section"><div class="player"><h2>Seungmin</h2><iframe src="PUT_PLAYLIST"></iframe></div></div>
 
 </body>
 </html>
