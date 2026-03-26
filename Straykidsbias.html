@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SKZ Audio Hub</title>
+
+<style>
+body {
+  background: #0d0d0d;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+.buttons button {
+  margin: 8px;
+  padding: 12px 18px;
+  border: none;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.buttons button:hover {
+  background: #ff3c3c;
+  transform: scale(1.1);
+}
+
+.section {
+  display: none;
+  margin-top: 20px;
+}
+
+iframe {
+  width: 90%;
+  height: 380px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+</style>
+
+<script>
+function showSection(id) {
+  let sections = document.getElementsByClassName("section");
+  for (let i = 0; i < sections.length; i++) {
+    sections[i].style.display = "none";
+  }
+  document.getElementById(id).style.display = "block";
+}
+</script>
+
+</head>
+<body>
+
+<h1>Stray Kids Audio Hub 🎧</h1>
+
+<div class="buttons">
+  <button onclick="showSection('group')">Group</button>
+  <button onclick="showSection('in')">I.N</button>
+  <button onclick="showSection('chan')">Bang Chan</button>
+  <button onclick="showSection('lee')">Lee Know</button>
+  <button onclick="showSection('changbin')">Changbin</button>
+  <button onclick="showSection('hyunjin')">Hyunjin</button>
+  <button onclick="showSection('han')">Han</button>
+  <button onclick="showSection('felix')">Felix</button>
+  <button onclick="showSection('seungmin')">Seungmin</button>
+</div>
+
+<!-- GROUP -->
+<div id="group" class="section">
+  <h2>Stray Kids Songs</h2>
+  <iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe>
+</div>
+
+<!-- I.N -->
+<div id="in" class="section">
+  <h2>I.N</h2>
+  <iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe>
+</div>
+
+<!-- OTHER MEMBERS (using main artist for now) -->
+<div id="chan" class="section"><h2>Bang Chan</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
+<div id="lee" class="section"><h2>Lee Know</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
+<div id="changbin" class="section"><h2>Changbin</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
+<div id="hyunjin" class="section"><h2>Hyunjin</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
+<div id="han" class="section"><h2>Han</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
+<div id="felix" class="section"><h2>Felix</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
+<div id="seungmin" class="section"><h2>Seungmin</h2><iframe src="https://open.spotify.com/embed/artist/2dIgFjalVxs4ThymZ67YCE"></iframe></div>
+
+</body>
+</html>
